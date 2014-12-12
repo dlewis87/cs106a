@@ -19,24 +19,24 @@ public class Pyramid extends GraphicsProgram {
 	}
 
 	private void layBricks () {
-		int theWidth = getWidth();
-		int theHeight = getHeight();
-		int firstLayerWidth = BRICK_WIDTH * BRICKS_IN_BASE;
-		int margins = theWidth - firstLayerWidth;
-		int startingPositionX = margins / 2;
-		int startingPositionY = theHeight - BRICK_HEIGHT;
-		int bricksInLayer = BRICKS_IN_BASE;
+		int theWidth = getWidth(); //find with of window
+		int theHeight = getHeight(); //find height of window
+		int firstLayerWidth = BRICK_WIDTH * BRICKS_IN_BASE; //find width of first layer
+		int margins = theWidth - firstLayerWidth; //find difference between width of first layer and width of window
+		int startingPositionX = margins / 2; //divide difference by two so that there is equal space wither side of first layer
+		int startingPositionY = theHeight - BRICK_HEIGHT; //starting position is from top corner of rect
+		int bricksInLayer = BRICKS_IN_BASE; //because bricks in base is constant
 	
-		for (int i=0; i<BRICKS_IN_BASE;i++)	{
+		for (int i=0; i<BRICKS_IN_BASE;i++)	{ //this loops through the layers depending on how many bricks in base
 			
-			for (int x=0; x<bricksInLayer;x++) {
-				add(new GRect(startingPositionX, startingPositionY, BRICK_WIDTH, BRICK_HEIGHT));
-				startingPositionX += BRICK_WIDTH;
+			for (int x=0; x<bricksInLayer;x++) { // this loops through bricks accross
+				add(new GRect(startingPositionX, startingPositionY, BRICK_WIDTH, BRICK_HEIGHT)); //this draws rectangle
+				startingPositionX += BRICK_WIDTH; //This moves the bricks along one brick every loop
 			}
-			bricksInLayer--;
-			startingPositionX = margins / 2;
-			startingPositionX += (BRICK_WIDTH / 2) * (i + 1);
-			startingPositionY -= BRICK_HEIGHT;
+			bricksInLayer--; //reduce bricks in layer by one
+			startingPositionX = margins / 2; //resets starting position
+			startingPositionX += (BRICK_WIDTH / 2) * (i + 1); //moves starting brick along half a brick * layer number 
+			startingPositionY -= BRICK_HEIGHT; //move layer up one
 		}	
 	}
 	
