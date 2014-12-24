@@ -15,7 +15,7 @@ public class FindRange extends ConsoleProgram {
 		int largest = 0;		
 		while (true) {
 			int a = readInt("?");			
-			if (a == 0) break;
+			if (a == SENTINEL) break;
 			if (a < smallest) smallest = a;
 			if (a > largest) largest = a;
 		}
@@ -26,6 +26,7 @@ public class FindRange extends ConsoleProgram {
 			println("Smallest " + smallest);
 			println("Largest " + largest);
 		}		
-	}
+	}	
+	private static final int SENTINEL = 0;
 }
 
