@@ -9,6 +9,8 @@
 import acm.program.*;
 
 public class PythagoreanTheorem extends ConsoleProgram {
+	
+	/*Compute length of third side using user input of two sides  */ 
 	public void run() {		
 		println("Enter values to compute Pythagorean theorem");
 		int a = readInt("Enter a: ");
